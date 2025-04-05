@@ -26,15 +26,15 @@ using namespace std;
 int main() {
     float a, b, c;
 
-    // Input sides of the triangle
+   // Input sides of the triangle
     cout << "Enter the lengths of three sides of the triangle: ";
     cin >> a >> b >> c;
 
-    // Check if a triangle can be formed
+   // Check if a triangle can be formed
     if (a + b > c && a + c > b && b + c > a) {
         cout << "A triangle can be formed." << endl;
 
-        // Check for type of triangle
+   // Check for type of triangle
         if (a == b && b == c) {
             cout << "The triangle is Equilateral." << endl;
         } 
@@ -48,7 +48,7 @@ int main() {
         cout << "A triangle cannot be formed." << endl;
     }
 
-    return 0;
+   return 0;
 }
  
 
@@ -63,7 +63,7 @@ int main() {
     cout << "Enter a number: ";
     cin >> number;
 
-    while (number > 0) {
+   while (number > 0) {
         int digit = number % 10;
         if (digit > largest_digit) {
             largest_digit = digit;
@@ -71,7 +71,7 @@ int main() {
         number /= 10;
     }
 
-    cout << "The largest digit is: " << largest_digit << endl;
+   cout << "The largest digit is: " << largest_digit << endl;
     return 0;
 }
  
@@ -87,24 +87,24 @@ int main() {
     cout << "Enter a decimal number: ";
     cin >> decimal;
 
-    // Binary conversion
+   // Binary conversion
     cout << "Binary: ";
     for (int i = 31; i >= 0; i--) {
         cout << ((decimal >> i) & 1);
     }
     cout << endl;
 
-    // Octal conversion
-    cout << "Octal: ";
+   // Octal conversion
+   cout << "Octal: ";
     int octal = 0, place = 1;
-    while (decimal) {
+   while (decimal) {
         octal += (decimal % 8) * place;
         decimal /= 8;
         place *= 10;
     }
     cout << octal << endl;
 
-    return 0;
+   return 0;
 }
  
 
@@ -119,19 +119,19 @@ int main() {
     cout << "Enter a number: ";
     cin >> number;
 
-    for (int i = 1; i < number; i++) {
+   for (int i = 1; i < number; i++) {
         if (number % i == 0) {
             sum += i;
         }
     }
 
-    if (sum == number) {
+   if (sum == number) {
         cout << number << " is a Perfect Number." << endl;
     } else {
         cout << number << " is not a Perfect Number." << endl;
     }
 
-    return 0;
+   return 0;
 }
  
 
@@ -168,4 +168,32 @@ int main() {
         cout << endl;
     }
     return 0;
+}
+
+8. Pattern Triangle type(n=4) 
+
+#include <iostream>
+
+int main() {
+    int n = 4; // You can change this value for different sizes
+
+   // Loop through rows
+    for (int i = 1; i <= n; ++i) {
+        // Print left side of the pattern
+        for (int j = 1; j <= i; ++j) {
+            std::cout << j;
+        }
+        
+   // Print right side of the pattern
+        if (i > 1) {
+            for (int j = i; j >= 1; --j) {
+                std::cout << j;
+            }
+        }
+
+   // Move to the next line after each row
+        std::cout << std::endl;
+    }
+
+   return 0;
 }
